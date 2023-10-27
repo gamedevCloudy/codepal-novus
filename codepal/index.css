@@ -11,7 +11,7 @@
     --background-60: #282A36;
     --surface-30: #44475A; 
     --primary: #BD93F9; 
-    --lifted: #44475A;
+    --lifted: #6272A4;
     --surface-black: #121212; 
 
 }
@@ -90,25 +90,38 @@ nav .githubIcon {
     max-width: 1000px;
 }
 
-.MainPagecard:hover {
-    box-shadow: 6px 0.55px 18px -3px rgba(101, 101, 101, 0.608);
-    transform: scale(1.1);
+
+.homeCard
+{
+    /* positioning and items */
+    display: flex; 
+    flex-direction: column;
+    width: max(40%,256px); 
+    padding: 16px; 
+    gap: 16px; 
+    align-items: center;
+
+    /* colouring */
+    background-color: var(--surface-30);
+    color:#f7f7f7; 
+    border-radius: 16px;
+    border: 1px solid var(--lifted); 
+    text-align: left;
+
+    /* animation and effects */
+    cursor: pointer; 
     transition: 300ms ease-in-out;
 }
 
-.MainPagecard {
-    display: flex;
-    flex-direction: column;
-    width: min(80vw, 300px);
-    padding: 2em;
-    border-radius: 12px;
-    border: 1px solid var(--surface-black);
-    background: #f7f7f7;
-    gap: 1em;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
+.homeCard:hover{
+    transform:scale(1.05); 
+    background-color: var(--lifted);
 }
 
+.homeCard p {
+    margin: auto;
+    opacity: 0.6;
+}
 .img-git
 {
     height: 48px;
@@ -116,10 +129,12 @@ nav .githubIcon {
     padding: 4px; 
 }
 
-.MainPagecard p {
-    width: 75%;
-    margin: auto;
-    opacity: 0.6;
+#Allcards
+{
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 @media only screen and (max-width: 520px) {
@@ -129,5 +144,6 @@ nav .githubIcon {
 
     #Allcards {
         justify-content: center;
+        width: 100%;
     }
 }
